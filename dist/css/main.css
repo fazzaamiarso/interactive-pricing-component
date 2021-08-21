@@ -74,6 +74,8 @@ header p {
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  -webkit-box-shadow: 0 5px 25px #10d5c2;
+          box-shadow: 0 5px 25px #10d5c2;
   background: #10d5c2 url("/images/icon-slider.svg") no-repeat center;
   cursor: pointer;
   -webkit-transition: background-color 0.15s ease-in-out;
