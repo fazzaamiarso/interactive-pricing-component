@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
 
+html {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
 $font-stack: "Manrope", sans-serif;
 $fullSliderBar: hsl(174, 77%, 80%);
 $sliderBg: hsl(174, 86%, 45%);
@@ -12,3 +20,173 @@ $emptySliderBar: hsl(224, 65%, 95%);
 $toggleBg: hsl(223, 50%, 87%);
 $textColor: hsl(225, 20%, 60%);
 $textAndCTABg: hsl(227, 35%, 25%);
+
+body {
+  font-family: $font-stack;
+  font-size: 0.9375rem;
+  color: $textColor;
+  line-height: 1.8;
+
+  background: url("/images/bg-pattern.svg");
+  background-color: $mainBg;
+  min-height: 100vh;
+}
+
+.whole-container {
+  width: 90%;
+  margin: 5vh auto;
+}
+header {
+  margin-bottom: 1.5rem;
+  padding: 1.8rem;
+
+  background: url("/images/pattern-circles.svg") no-repeat center/ contain;
+  text-align: center;
+  h1 {
+    font-size: 1.2rem;
+    color: $textAndCTABg;
+  }
+  p {
+    font-size: 0.9rem;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  text-align: center;
+  font-size: 0.8rem;
+
+  background-color: white;
+
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.slider {
+  &__views {
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  &__range {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    outline: none;
+    background-color: $emptySliderBar;
+    cursor: pointer;
+    border-radius: 30px;
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: $sliderBg url("/images/icon-slider.svg") no-repeat center;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
+      &:hover {
+        background-color: $fullSliderBar;
+      }
+    }
+    &:active::-webkit-slider-thumb {
+      background-color: $fullSliderBar;
+    }
+  }
+  &__pricing {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  &__price {
+    color: $textAndCTABg;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-right: 0.3ch;
+  }
+}
+.toggle {
+  margin-bottom: 3rem;
+  &__monthly {
+    margin-right: 1.5ch;
+  }
+  &__yearly {
+    margin-left: 1.5ch;
+    margin-right: 1ch;
+  }
+  &-container {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked + span {
+      background-color: $fullSliderBar;
+    }
+    &:checked + span::before {
+      transform: translateX(22px);
+    }
+  }
+  &__slide {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 30px;
+    transition: 0.4s;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+  }
+  &__discount {
+    font-size: 0.6rem;
+    color: $discountText;
+
+    padding: 0.3em 0.7em;
+    background-color: $discountBg;
+    border-radius: 15px;
+  }
+}
+
+.features {
+  &__list {
+    margin-bottom: 2rem;
+    list-style: none;
+    &-item {
+      img {
+        margin-right: 2ch;
+      }
+    }
+    &-item + &-item {
+      margin-top: 0.3rem;
+    }
+  }
+  .btn {
+    border: none;
+    border-radius: 25px;
+
+    font-weight: 600;
+    color: $CTAText;
+    line-height: 1;
+
+    background-color: $textAndCTABg;
+    padding: 1em 4em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

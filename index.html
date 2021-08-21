@@ -11,7 +11,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="stylesheet" href="./dist/css/main.css" />
     <title>Frontend Mentor | Interactive pricing component</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -26,55 +26,58 @@
     </style>
   </head>
   <body>
-    <header>
-      <h1>Simple, traffic-based pricing</h1>
-      <p>Sign-up for our 30-day trial. No credit card required.</p>
-    </header>
-
-    <main class="card card-container">
-      <section class="slider">
-        <p class="slider__views">100k Pageviews</p>
-        <div class="slider-container">
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-            class="slider__range"
-            id="range"
+    <div class="whole-container">
+      <header>
+        <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </header>
+      <main class="card card-container">
+        <section class="slider">
+          <p class="slider__views">100k Pageviews</p>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"  
+            step="25"
+                class="slider__range"
+              id="range"
+            />
+          </div>
+          <p class="slider__pricing">
+            <span class="slider__price">$16.00</span> /month
+          </p>
+        </section>
+        <section class="toggle">
+          <span class="toggle__monthly">Monthly Billing</span>
+          <label for="toggle" class="toggle-container"
+            ><input type="checkbox" id="toggle" class="toggle__input"
           />
-        </div>
-        <p class="slider__pricing">
-          <span class="slider__price">$16.00</span> /month
-        </p>
-      </section>
-
-      <section class="toggle">
-        <span class="toggle__monthly">Monthly Billing</span>
-        <label for="toggle"
-          ><input type="checkbox" id="toggle" class="toggler"
-        /></label>
-        <span class="toggle__yearly">Yearly Billing </span>
-        <span class="toggle__discount">25% discount</span>
-      </section>
-
-      <section class="features">
-        <ul class="features__list">
-          <li class="features__item">
-            <img src="./images/icon-check.svg" alt="checklist" /> Unlimited
-            websites
-          </li>
-          <li class="features__item">
-            <img src="./images/icon-check.svg" alt="checklist" /> 100% data
-            ownership
-          </li>
-          <li class="features__item">
-            <img src="./images/icon-check.svg" alt="checklist" />Email reports
-          </li>
-        </ul>
-        <button class="btn">Start my trial</button>
-      </section>
-    </main>
+          <span class="toggle__slide"></span>
+        </label>
+          <span class="toggle__yearly">Yearly Billing </span>
+          <span class="toggle__discount">-25% </span>
+        </section>
+      
+        <section class="features">
+          <ul class="features__list">
+            <li class="features__list-item">
+              <img src="./images/icon-check.svg" alt="checklist" /> Unlimited
+              websites
+            </li>
+            <li class="features__list-item">
+              <img src="./images/icon-check.svg" alt="checklist" /> 100% data
+              ownership
+            </li>
+            <li class="features__list-item">
+              <img src="./images/icon-check.svg" alt="checklist" />Email reports
+            </li>
+          </ul>
+          <button class="btn">Start my trial</button>
+        </section>
+      </div>
+    </div>
 
     <div class="attribution">
       Challenge by
