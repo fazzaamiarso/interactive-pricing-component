@@ -26,15 +26,61 @@
     </style>
   </head>
   <body>
-    Simple, traffic-based pricing Sign-up for our 30-day trial. No credit card
-    required. Pageviews $ /month Monthly Billing Yearly Billing 25% discount
-    Unlimited websites 100% data ownership Email reports Start my trial
+    <header>
+      <h1>Simple, traffic-based pricing</h1>
+      <p>Sign-up for our 30-day trial. No credit card required.</p>
+    </header>
+
+    <main class="card card-container">
+      <section class="slider">
+        <p class="slider__views">100k Pageviews</p>
+        <div class="slider-container">
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="slider__range"
+            id="range"
+          />
+        </div>
+        <p class="slider__pricing">
+          <span class="slider__price">$16.00</span> /month
+        </p>
+      </section>
+
+      <section class="toggle">
+        <span class="toggle__monthly">Monthly Billing</span>
+        <label for="toggle"
+          ><input type="checkbox" id="toggle" class="toggler"
+        /></label>
+        <span class="toggle__yearly">Yearly Billing </span>
+        <span class="toggle__discount">25% discount</span>
+      </section>
+
+      <section class="features">
+        <ul class="features__list">
+          <li class="features__item">
+            <img src="./images/icon-check.svg" alt="checklist" /> Unlimited
+            websites
+          </li>
+          <li class="features__item">
+            <img src="./images/icon-check.svg" alt="checklist" /> 100% data
+            ownership
+          </li>
+          <li class="features__item">
+            <img src="./images/icon-check.svg" alt="checklist" />Email reports
+          </li>
+        </ul>
+        <button class="btn">Start my trial</button>
+      </section>
+    </main>
 
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="#">Fazza Razaq Amiarso</a>.
     </div>
     <script src="main.js"></script>
   </body>
