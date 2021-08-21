@@ -18,7 +18,7 @@ const updateValue = function (slider) {
   const valueToUpdate = function (views, prices) {
     pageViews.textContent = `${views} pageviews`;
     price.textContent = `$${
-      toggle.checked ? (prices * 0.75).toFixed(2) : prices.toFixed(2)
+      toggler.checked ? (prices * 0.75).toFixed(2) : prices.toFixed(2)
     }`;
   };
   if (slider.value === "0") valueToUpdate("10k", 8);
