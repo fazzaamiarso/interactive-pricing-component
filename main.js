@@ -11,6 +11,7 @@ const sliderFill = function (slider) {
   const percentage =
     (100 * (slider.value - slider.min)) / (slider.max - slider.min);
   const bg = `linear-gradient(90deg, ${sliderColors.fill} ${percentage}%, ${sliderColors.empty} ${percentage}% )`;
+
   slider.style.background = bg;
 };
 

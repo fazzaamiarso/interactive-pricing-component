@@ -27,7 +27,7 @@ body {
   color: $textColor;
   line-height: 1.8;
 
-  background: url("/images/bg-pattern.svg");
+  background: url("/images/bg-pattern.svg") no-repeat;
   background-color: $mainBg;
   min-height: 100vh;
 }
@@ -59,8 +59,11 @@ header {
 
   background-color: white;
 
+  margin: 0 auto;
+  max-width: 570px;
   padding: 1rem;
   border-radius: 10px;
+  overflow-x: hidden;
 }
 
 .slider {
@@ -71,7 +74,7 @@ header {
   }
   &__range {
     appearance: none;
-    width: 100%;
+    width: calc(min(100%, 500px));
     height: 8px;
     outline: none;
     background-color: $emptySliderBar;
@@ -106,7 +109,17 @@ header {
   }
 }
 .toggle {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
+  &::after {
+    content: "";
+    display: block;
+    background-color: $emptySliderBar;
+
+    margin-top: 2rem;
+    height: 1px;
+    width: 1000px;
+    transform: translateX(-10%);
+  }
   &__monthly {
     margin-right: 1.5ch;
   }
@@ -160,6 +173,9 @@ header {
     padding: 0.3em 0.7em;
     background-color: $discountBg;
     border-radius: 15px;
+    &-text {
+      display: none;
+    }
   }
 }
 
@@ -188,6 +204,60 @@ header {
     padding: 1em 4em;
     &:hover {
       cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 2rem;
+    &__list {
+      text-align: start;
+    }
+    .btn {
+      transform: translateY(-15px);
+    }
+  }
+  .toggle__discount-text {
+    display: inline;
+  }
+
+  .slider {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "views views pricing pricing"
+      "slide slide slide slide";
+
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    &__views {
+      justify-self: flex-start;
+      grid-area: views;
+
+      margin: 0 2.5rem;
+      font-size: 1rem;
+    }
+    &__pricing {
+      grid-area: pricing;
+      justify-self: flex-end;
+
+      margin: 0 2.5rem;
+      font-size: 1.2rem;
+    }
+    &__price {
+      font-size: 2.2rem;
+    }
+    &-container {
+      grid-area: slide;
+
+      margin-top: 1rem;
     }
   }
 }
